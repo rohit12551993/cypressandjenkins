@@ -26,7 +26,7 @@ describe('orangehrmloginbyPOM', () => {
 
     it('clickupgradebutton', () => {
    const ln=new clickupgradebutton();
-  ln.clickupgradebutton();   
+  ln.clickupgradebutton();  ; 
   })
   
 })

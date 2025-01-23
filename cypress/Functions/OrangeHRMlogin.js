@@ -12,7 +12,7 @@ class Login {
 
   // Click the login button
   clickLogin() {
-    cy.get("button[type='submit']").click();
+    cy.get("button[type='submit']").click();;;;;;;
   }
 
 }
