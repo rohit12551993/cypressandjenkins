@@ -1,0 +1,6 @@
+firstname,lastname,email,phone_no,unit,resident,visitor_type,notes_to_staff,scheduling_type,specific_date,start_time,end_time,days,day_of_month
+dj,Hales,alex.fsdhales@gmail.com,1232220265,0000,Sumit Mundra,guest,,today,,,,,
+dj1,Hales,alexsdf.hales@gmail.com,1232220265,0000,Sumit Mundra,guest,,daily,,8/10/2019 8:00,8/10/2019 8:00,,
+dj2,Hales,alex.hfsales@gmail.com,1232226265,0000,Sumit Mundra,guest,,weekly,,8/10/2019 8:00,10/10/2019 8:00,"monday, tuesday",
+dj3,Hales,alfasfex.hales@gmail.com,1232220265,0000,Sumit Mundra,guest,,monthly,,8/10/2019 8:00,10/10/2019 8:00,,2
+dj4,Hales,alexfsa.hales@gmail.com,1232226265,0000,Sumit Mundra,guest,,specific,8/10/2019 8:00,,,,

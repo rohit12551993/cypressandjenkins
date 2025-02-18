@@ -1,0 +1,6 @@
+firstname,lastname,email,phone_no,unit,resident,visitor_type,notes_to_staff,scheduling_type,specific_date,start_time,end_time,days,day_of_month
+remote,Hales,montu1@gmail.com,,0000,Yeezy Martin,guest,,today,,,,,
+remote1,Hales,montu2@gmail.com,,0000,Yeezy Martin,Service,,daily,,8/10/2019 8:00,8/10/2019 8:00,,
+remote2,Hales,montu3@gmail.com,,0000,Yeezy Martin,Contractor,,weekly,,8/10/2019 8:00,10/10/2019 8:00,"monday, tuesday",
+remote3,Hales,montu4@gmail.com,,0000,Yeezy Martin,Delivery,,monthly,,8/10/2019 8:00,10/10/2019 8:00,,2
+remote4,Hales,montu5@gmail.com,,0000,Yeezy Martin,guest,,specific,8/10/2019 8:00,,,,

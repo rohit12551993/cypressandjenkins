@@ -5,9 +5,11 @@ describe('DROPDOWNS', () => {
     it('TEST 1', () => {
 
        
-        cy.visit('https://testautomationpractice.blogspot.com/')
+        cy.visit('www.wikipedia.com/')
  //dropdown with select that is selecting any particular option from a dropdown
-        //cy.get('#country').select('Australia') 
+ cy.get("#searchInput").click().type('Delhi');
+ cy.get(".suggestion-title").contains('Delhi Metro').click();
+        
 
 
 
