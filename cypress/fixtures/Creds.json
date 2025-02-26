@@ -1,5 +1,7 @@
 {
-    "Username": "Adminn",
-    "Password": "Password@123",
-    "Email": "harish@madan.com"
-}
+    "Username":"Adminn",
+    "Password":"Password@123",
+    "Email":"harish@madan.com",
+    "Username1":"superadmin@mail.com",
+    "Password1":"superadmin@123"
+ }

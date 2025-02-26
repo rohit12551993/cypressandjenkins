@@ -26,3 +26,5 @@
 
 /// <reference types="Cypress" />
 /// <reference types="Cypress-xpath" />
+require('cypress-downloadfile/lib/downloadFileCommand')
+
