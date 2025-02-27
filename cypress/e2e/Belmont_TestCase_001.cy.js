@@ -2,6 +2,7 @@ import belmontlogin from "../Pages/belmont_login_Superadmin";
 import belmont_Addmembers from "../Pages/belmont_Addmembers";
 import belmont_signout from "../Pages/belmont_signout";
 
+
 describe("To verify that super admin can add members", () => {
     const login = new belmontlogin();
 
@@ -32,3 +33,5 @@ describe("To verify that super admin can add members", () => {
         logout.clicklogout();
     })
 })
+C:\Users\BigStep\cypress\cypress\e2e\Belmont_TestCase_001.cy.js
+C:\ProgramData\Jenkins\.jenkins\workspace\cypress_jenkins
