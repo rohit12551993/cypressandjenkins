@@ -2,7 +2,6 @@ const fs = require("fs-extra");
 const { defineConfig } = require("cypress");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
 
-
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter", // For generating HTML reports
 
@@ -31,12 +30,13 @@ module.exports = defineConfig({
         },
         parsePdf({ filePath }) {
           return fs.readFile(filePath).then(pdfParse).then(data => data.text);
-        }
+        },
       });
 
       return config; // Return updated config
     },
 
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}", // ✅ Add this to locate spec files
     defaultCommandTimeout: 10000, // 10 seconds for commands
     requestTimeout: 15000,        // 15 seconds for requests
     responseTimeout: 15000,       // 15 seconds for response wait time

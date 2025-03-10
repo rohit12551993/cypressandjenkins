@@ -17,7 +17,7 @@ describe('to verify that user can login', () => {
         });
     })
 
-    it('user can login', () => {
+    it('add and edit groups', () => {
         const creategroups = new addeditgroups();
         creategroups.creategroups();
     });
