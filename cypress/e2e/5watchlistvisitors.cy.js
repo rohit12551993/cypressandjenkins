@@ -4,7 +4,7 @@ describe("Creating 5 watchlist visitors at a single time", () => {
     // Use a loop to create 5 tests
     for (let i = 0; i <= 4; i++) {
         it(`Creating watchlist visitor ${i + 1}`, () => {  // Added dynamic test names
-            cy.visit("https://stg.risebuildings.comm");
+            cy.visit("https://stg.risebuildings.commm");
 
             // Resize and position the window
             cy.window().then((win) => {
