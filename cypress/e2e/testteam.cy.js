@@ -4,6 +4,8 @@ try {
             //open URL
             cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
             cy.wait(2000);
+            cy.url().should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+ 
         
         })
         it("enter email",()=>{
@@ -19,11 +21,15 @@ try {
         it("click login",()=>{
             //user will click login button
             cy.get("button[type='submit']").click();
+            cy.get('img[alt="client brand banner"]').should('be.visible');
+            
+            
         })
     })
     
 } catch (error) {
-    console.log("error caught")
+    cy.log("error caught")
+    
     
 }
 

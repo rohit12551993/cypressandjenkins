@@ -20,7 +20,7 @@ clickwatchlistvisitors(){
 }
 clickaddnew()
 {
-    cy.xpath("   cy.wait(3000);").click();
+    cy.contains(" Add New ").click();
 }
 enterfirstname()
 {
