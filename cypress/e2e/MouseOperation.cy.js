@@ -3,17 +3,7 @@ require('@4tw/cypress-drag-drop');
 describe('DROPDOWNS', () => {
   
   
-    it('mousehover', () => {
-
-       
-        cy.visit('https://testautomationpractice.blogspot.com/')
-        cy.get(".dropbtn").trigger('mouseover');
-       
-
-
     
-    
-    })
     it('right click', () => {
 
        
@@ -29,7 +19,7 @@ describe('DROPDOWNS', () => {
        
         cy.visit('https://testautomationpractice.blogspot.com/')
         cy.get("button[ondblclick='myFunction1()']").dblclick();
-        cy.get("button[ondblclick='myFunction1()']").trigger('dblclick')
+      //  cy.get("button[ondblclick='myFunction1()']").trigger('dblclick')
 
     
     
