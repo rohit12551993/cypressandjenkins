@@ -7,9 +7,14 @@ describe("How to read data from a file after downloading it", () => {
       cy.get("div[class='container'] div button").click();
   
       // Use cy.readFile to read the downloaded file asynchronously and log its content
-      cy.readFile("cypress/downloads/dummy_file.txt").then((data) => {
+      cy.readFile("cypress/downloads/dummy_file.txt").then((data) => {  //yaha file read hui and usko data mei pass kr dia humney
         // Log the file content to the console
         cy.log(data);
+
+        let words = data.split(" ");
+        let  firsttwowords = words.slice(0, 2);
+        cy.log(firsttwowords);
+
       });
     });
   });

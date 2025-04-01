@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2025-04-01T05:33:27.377Z",
+    "end": "2025-04-01T05:33:31.564Z",
+    "duration": 4187,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "92f0c793-7517-4d9a-88b7-1204baf05b76",
+      "title": "",
+      "fullFile": "cypress\\e2e\\5watchlistvisitors.cy.js",
+      "file": "cypress\\e2e\\5watchlistvisitors.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+          "title": "Creating 5 watchlist visitors at a single time",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Creating watchlist visitor 1",
+              "fullTitle": "Creating 5 watchlist visitors at a single time Creating watchlist visitor 1",
+              "timedOut": null,
+              "duration": 1003,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\5watchlistvisitors.cy.js\\\\Creating 5 watchlist visitors at a single time -- Creating watchlist visitor 1 (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Added dynamic test names\ncy.visit(\"https://stg.risebuildings.commm\");\n// Resize and position the window\ncy.window().then(win => {\n  win.moveTo(0, 0);\n  win.resizeTo(screen.availWidth, screen.availHeight);\n});\n// Perform login actions\ncy.get('#rise-login-email').click().type(\"harish@madan.com\");\ncy.get('[type=\"button\"]').click();\ncy.get('#rise-login-password').click().type(\"Password@123\");\ncy.get('[type=\"button\"]').click();\ncy.wait(5000); // It's good to avoid fixed waits; see note below\n// Navigate through the app\ncy.get(\"img[src='https://assets.stg.risebuildings.com/public/shared_portal/assets/images/navigation/access@2x.png']\").click();\ncy.contains(\" Visitors \").click();\ncy.get('body > app-root > div > mat-sidenav-container > mat-sidenav-content > div.view-container.side-container > app-visitors > rise-common-tabs > div > div > nav > div.mat-tab-link-container > div > div > button > span.mat-button-wrapper > mat-icon').click();\ncy.contains(\" Watch List \").click();\ncy.contains(\" Add New \").click();\n// Fill in visitor details using Faker\ncy.get(\"input[formcontrolname='firstname']\").click().type(_faker.faker.person.firstName());\ncy.get(\"input[formcontrolname='lastname']\").click().type(_faker.faker.person.lastName());\ncy.wait(2000); // You might want to remove or replace with a proper wait condition\n// Select a specific value from the dropdown\ncy.get(\".mat-select-custom-arrow-wrapper\").click();\ncy.contains(\" Anaya \").click();\n// Submit the form\ncy.get(\".rb-c-dailog-submit.rb-font-weight600.rb-u-gap-left.clickable\").click();\ncy.get(\".avatar-container\").click();\ncy.contains(\" Sign Out \").click();\ncy.wait(2000);\ncy.url().should('eq', 'https://stg.risebuildings.com/pm/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131607:74)\n    at visitFailedByErr (http://localhost:58319/__cypress/runner/cypress_runner.js:131006:12)\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131606:11)\n    at tryCatcher (http://localhost:58319/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58319/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (http://localhost:58319/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (http://localhost:58319/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (http://localhost:58319/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (http://localhost:58319/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (http://localhost:58319/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/5watchlistvisitors.cy.js:7:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "84ad4387-af88-4d5c-b03f-dbf9e707a530",
+              "parentUUID": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Creating watchlist visitor 2",
+              "fullTitle": "Creating 5 watchlist visitors at a single time Creating watchlist visitor 2",
+              "timedOut": null,
+              "duration": 764,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\5watchlistvisitors.cy.js\\\\Creating 5 watchlist visitors at a single time -- Creating watchlist visitor 2 (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Added dynamic test names\ncy.visit(\"https://stg.risebuildings.commm\");\n// Resize and position the window\ncy.window().then(win => {\n  win.moveTo(0, 0);\n  win.resizeTo(screen.availWidth, screen.availHeight);\n});\n// Perform login actions\ncy.get('#rise-login-email').click().type(\"harish@madan.com\");\ncy.get('[type=\"button\"]').click();\ncy.get('#rise-login-password').click().type(\"Password@123\");\ncy.get('[type=\"button\"]').click();\ncy.wait(5000); // It's good to avoid fixed waits; see note below\n// Navigate through the app\ncy.get(\"img[src='https://assets.stg.risebuildings.com/public/shared_portal/assets/images/navigation/access@2x.png']\").click();\ncy.contains(\" Visitors \").click();\ncy.get('body > app-root > div > mat-sidenav-container > mat-sidenav-content > div.view-container.side-container > app-visitors > rise-common-tabs > div > div > nav > div.mat-tab-link-container > div > div > button > span.mat-button-wrapper > mat-icon').click();\ncy.contains(\" Watch List \").click();\ncy.contains(\" Add New \").click();\n// Fill in visitor details using Faker\ncy.get(\"input[formcontrolname='firstname']\").click().type(_faker.faker.person.firstName());\ncy.get(\"input[formcontrolname='lastname']\").click().type(_faker.faker.person.lastName());\ncy.wait(2000); // You might want to remove or replace with a proper wait condition\n// Select a specific value from the dropdown\ncy.get(\".mat-select-custom-arrow-wrapper\").click();\ncy.contains(\" Anaya \").click();\n// Submit the form\ncy.get(\".rb-c-dailog-submit.rb-font-weight600.rb-u-gap-left.clickable\").click();\ncy.get(\".avatar-container\").click();\ncy.contains(\" Sign Out \").click();\ncy.wait(2000);\ncy.url().should('eq', 'https://stg.risebuildings.com/pm/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131607:74)\n    at visitFailedByErr (http://localhost:58319/__cypress/runner/cypress_runner.js:131006:12)\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131606:11)\n    at tryCatcher (http://localhost:58319/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58319/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (http://localhost:58319/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (http://localhost:58319/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (http://localhost:58319/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (http://localhost:58319/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (http://localhost:58319/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/5watchlistvisitors.cy.js:7:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "f7ac8731-f4fa-40bf-9ec1-2ffe1aee2261",
+              "parentUUID": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Creating watchlist visitor 3",
+              "fullTitle": "Creating 5 watchlist visitors at a single time Creating watchlist visitor 3",
+              "timedOut": null,
+              "duration": 773,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\5watchlistvisitors.cy.js\\\\Creating 5 watchlist visitors at a single time -- Creating watchlist visitor 3 (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Added dynamic test names\ncy.visit(\"https://stg.risebuildings.commm\");\n// Resize and position the window\ncy.window().then(win => {\n  win.moveTo(0, 0);\n  win.resizeTo(screen.availWidth, screen.availHeight);\n});\n// Perform login actions\ncy.get('#rise-login-email').click().type(\"harish@madan.com\");\ncy.get('[type=\"button\"]').click();\ncy.get('#rise-login-password').click().type(\"Password@123\");\ncy.get('[type=\"button\"]').click();\ncy.wait(5000); // It's good to avoid fixed waits; see note below\n// Navigate through the app\ncy.get(\"img[src='https://assets.stg.risebuildings.com/public/shared_portal/assets/images/navigation/access@2x.png']\").click();\ncy.contains(\" Visitors \").click();\ncy.get('body > app-root > div > mat-sidenav-container > mat-sidenav-content > div.view-container.side-container > app-visitors > rise-common-tabs > div > div > nav > div.mat-tab-link-container > div > div > button > span.mat-button-wrapper > mat-icon').click();\ncy.contains(\" Watch List \").click();\ncy.contains(\" Add New \").click();\n// Fill in visitor details using Faker\ncy.get(\"input[formcontrolname='firstname']\").click().type(_faker.faker.person.firstName());\ncy.get(\"input[formcontrolname='lastname']\").click().type(_faker.faker.person.lastName());\ncy.wait(2000); // You might want to remove or replace with a proper wait condition\n// Select a specific value from the dropdown\ncy.get(\".mat-select-custom-arrow-wrapper\").click();\ncy.contains(\" Anaya \").click();\n// Submit the form\ncy.get(\".rb-c-dailog-submit.rb-font-weight600.rb-u-gap-left.clickable\").click();\ncy.get(\".avatar-container\").click();\ncy.contains(\" Sign Out \").click();\ncy.wait(2000);\ncy.url().should('eq', 'https://stg.risebuildings.com/pm/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131607:74)\n    at visitFailedByErr (http://localhost:58319/__cypress/runner/cypress_runner.js:131006:12)\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131606:11)\n    at tryCatcher (http://localhost:58319/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58319/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (http://localhost:58319/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (http://localhost:58319/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (http://localhost:58319/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (http://localhost:58319/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (http://localhost:58319/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/5watchlistvisitors.cy.js:7:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "5cfafb1a-5b5a-4015-8d4a-0ab75fe2cb21",
+              "parentUUID": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Creating watchlist visitor 4",
+              "fullTitle": "Creating 5 watchlist visitors at a single time Creating watchlist visitor 4",
+              "timedOut": null,
+              "duration": 712,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\5watchlistvisitors.cy.js\\\\Creating 5 watchlist visitors at a single time -- Creating watchlist visitor 4 (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Added dynamic test names\ncy.visit(\"https://stg.risebuildings.commm\");\n// Resize and position the window\ncy.window().then(win => {\n  win.moveTo(0, 0);\n  win.resizeTo(screen.availWidth, screen.availHeight);\n});\n// Perform login actions\ncy.get('#rise-login-email').click().type(\"harish@madan.com\");\ncy.get('[type=\"button\"]').click();\ncy.get('#rise-login-password').click().type(\"Password@123\");\ncy.get('[type=\"button\"]').click();\ncy.wait(5000); // It's good to avoid fixed waits; see note below\n// Navigate through the app\ncy.get(\"img[src='https://assets.stg.risebuildings.com/public/shared_portal/assets/images/navigation/access@2x.png']\").click();\ncy.contains(\" Visitors \").click();\ncy.get('body > app-root > div > mat-sidenav-container > mat-sidenav-content > div.view-container.side-container > app-visitors > rise-common-tabs > div > div > nav > div.mat-tab-link-container > div > div > button > span.mat-button-wrapper > mat-icon').click();\ncy.contains(\" Watch List \").click();\ncy.contains(\" Add New \").click();\n// Fill in visitor details using Faker\ncy.get(\"input[formcontrolname='firstname']\").click().type(_faker.faker.person.firstName());\ncy.get(\"input[formcontrolname='lastname']\").click().type(_faker.faker.person.lastName());\ncy.wait(2000); // You might want to remove or replace with a proper wait condition\n// Select a specific value from the dropdown\ncy.get(\".mat-select-custom-arrow-wrapper\").click();\ncy.contains(\" Anaya \").click();\n// Submit the form\ncy.get(\".rb-c-dailog-submit.rb-font-weight600.rb-u-gap-left.clickable\").click();\ncy.get(\".avatar-container\").click();\ncy.contains(\" Sign Out \").click();\ncy.wait(2000);\ncy.url().should('eq', 'https://stg.risebuildings.com/pm/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131607:74)\n    at visitFailedByErr (http://localhost:58319/__cypress/runner/cypress_runner.js:131006:12)\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131606:11)\n    at tryCatcher (http://localhost:58319/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58319/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (http://localhost:58319/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (http://localhost:58319/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (http://localhost:58319/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (http://localhost:58319/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (http://localhost:58319/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/5watchlistvisitors.cy.js:7:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "9d282443-57bd-4935-b24f-c893e63940b2",
+              "parentUUID": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Creating watchlist visitor 5",
+              "fullTitle": "Creating 5 watchlist visitors at a single time Creating watchlist visitor 5",
+              "timedOut": null,
+              "duration": 773,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\5watchlistvisitors.cy.js\\\\Creating 5 watchlist visitors at a single time -- Creating watchlist visitor 5 (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Added dynamic test names\ncy.visit(\"https://stg.risebuildings.commm\");\n// Resize and position the window\ncy.window().then(win => {\n  win.moveTo(0, 0);\n  win.resizeTo(screen.availWidth, screen.availHeight);\n});\n// Perform login actions\ncy.get('#rise-login-email').click().type(\"harish@madan.com\");\ncy.get('[type=\"button\"]').click();\ncy.get('#rise-login-password').click().type(\"Password@123\");\ncy.get('[type=\"button\"]').click();\ncy.wait(5000); // It's good to avoid fixed waits; see note below\n// Navigate through the app\ncy.get(\"img[src='https://assets.stg.risebuildings.com/public/shared_portal/assets/images/navigation/access@2x.png']\").click();\ncy.contains(\" Visitors \").click();\ncy.get('body > app-root > div > mat-sidenav-container > mat-sidenav-content > div.view-container.side-container > app-visitors > rise-common-tabs > div > div > nav > div.mat-tab-link-container > div > div > button > span.mat-button-wrapper > mat-icon').click();\ncy.contains(\" Watch List \").click();\ncy.contains(\" Add New \").click();\n// Fill in visitor details using Faker\ncy.get(\"input[formcontrolname='firstname']\").click().type(_faker.faker.person.firstName());\ncy.get(\"input[formcontrolname='lastname']\").click().type(_faker.faker.person.lastName());\ncy.wait(2000); // You might want to remove or replace with a proper wait condition\n// Select a specific value from the dropdown\ncy.get(\".mat-select-custom-arrow-wrapper\").click();\ncy.contains(\" Anaya \").click();\n// Submit the form\ncy.get(\".rb-c-dailog-submit.rb-font-weight600.rb-u-gap-left.clickable\").click();\ncy.get(\".avatar-container\").click();\ncy.contains(\" Sign Out \").click();\ncy.wait(2000);\ncy.url().should('eq', 'https://stg.risebuildings.com/pm/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://stg.risebuildings.commm/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131607:74)\n    at visitFailedByErr (http://localhost:58319/__cypress/runner/cypress_runner.js:131006:12)\n    at <unknown> (http://localhost:58319/__cypress/runner/cypress_runner.js:131606:11)\n    at tryCatcher (http://localhost:58319/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58319/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (http://localhost:58319/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (http://localhost:58319/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (http://localhost:58319/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (http://localhost:58319/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (http://localhost:58319/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (http://localhost:58319/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/5watchlistvisitors.cy.js:7:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND stg.risebuildings.commm\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "1159df77-0da3-47b1-babc-2bd5921d4b76",
+              "parentUUID": "35d17cbb-0f2c-448b-8042-57c594c85f4a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "84ad4387-af88-4d5c-b03f-dbf9e707a530",
+            "f7ac8731-f4fa-40bf-9ec1-2ffe1aee2261",
+            "5cfafb1a-5b5a-4015-8d4a-0ab75fe2cb21",
+            "9d282443-57bd-4935-b24f-c893e63940b2",
+            "1159df77-0da3-47b1-babc-2bd5921d4b76"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4025,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
