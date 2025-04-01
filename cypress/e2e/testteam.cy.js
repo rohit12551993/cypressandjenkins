@@ -1,15 +1,12 @@
-describe("browser commands",()=>{
-        it.only("commands",()=>{
+import '@percy/cypress';
 
+describe("browser commands", () => {
+    it.only("commands", () => {
 
-           cy.visit("https://testautomationpractice.blogspot.com/");
-           cy.get("#male").check().should('be.checked')
-
-           
-                               
-           
-            
-           
-            });
-        });
-    
+        cy.visit("https://www.google.com/");
+        cy.percySnapshot('google homepage');
+      
+      
+    });
+  });
+  
