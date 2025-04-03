@@ -7,21 +7,24 @@
   },
   "author": "rohit",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.3.0",
     "@faker-js/faker": "^9.5.0",
     "@percy/cypress": "^3.1.5",
+    "chai": "^5.2.0",
     "cypress": "^14.1.0",
     "cypress-downloadfile": "^1.2.4",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
-    "faker": "^6.6.6"
+    "faker": "^6.6.6",
+    "mocha": "^11.1.0"
   },
   "dependencies": {
     "fs-extra": "^11.3.0",
     "pdf-parse": "^1.1.1",
     "xlsx": "^0.18.5"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
