@@ -29,5 +29,15 @@
 
 
 require('cypress-downloadfile/lib/downloadFileCommand')
+import cypress from 'cypress';
 import 'cypress-file-upload';
+
+
+Cypress.Commands.add('clickradio',(label)=>{
+  cy.get('a').contains(label).click();
+}
+)
+
+
+
 

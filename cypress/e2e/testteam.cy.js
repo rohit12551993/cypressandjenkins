@@ -1,26 +1,10 @@
-import '@percy/cypress';
-
-describe("browser commands", () => {
-    it.only("commands", () => {
-
-        cy.fixture("occupantdetails").then((data) => { // Loading fixture data
-            cy.visit("https://stg.risebuildings.com/pm/login"); // Open the website
-            cy.get("#rise-login-email").click().type(data.Email);// Enter email
 
 
+describe("Automation Practice", () => {
+  it("fills and tabs through the name field", () => {
+    cy.visit("https://testautomationpractice.blogspot.com/");
+    cy.url().should('eq', 'https://testautomationpractice.blogspot.com/');
 
-
-
-
-
-            cy.get("button[type='button']").click(); // Click the continue button
-            cy.get("#rise-login-password").click().type(data.Password); // Enter password
-            cy.get("button[type='button']").click(); // Click the sign-in button
-    
-    
-      
-        })
-    })
-
-  })
-  
+    //cy.clickradiobutton("male");
+  });
+});
