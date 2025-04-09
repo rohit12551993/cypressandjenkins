@@ -2,7 +2,7 @@ name: cypressgithubactions
 on: [push]
 jobs:
   cypress-run:
-    runs-on: Windows-latest
+    runs-on: ubuntu-latest
   steps:
     -name: Chechkout
      uses: actions/checkout@v3
