@@ -29,14 +29,15 @@
 
 
 require('cypress-downloadfile/lib/downloadFileCommand')
-import cypress from 'cypress';
 import 'cypress-file-upload';
 
+Cypress.Commands.add('clicktype',()=>{
+  cy.visit("https://testautomationpractice.blogspot.com/");
+  cy.get("#name").click().type("rohit madan");
+  cy.get("#email").click().type("rohitmadan1993@gmail.com");
+  cy.get("#phone").click().type("9999999999");
+})
 
-Cypress.Commands.add('clickradio',(label)=>{
-  cy.get('a').contains(label).click();
-}
-)
 
 
 
