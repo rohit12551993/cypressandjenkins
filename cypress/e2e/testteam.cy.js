@@ -1,11 +1,15 @@
+const { faker } = require("@faker-js/faker/locale/af_ZA");
 
 
 describe("Automation Practice", () => {
-  it("fills and tabs through the name field", () => {
-    cy.fixture("staffcreds").then((data)=>{
-      cy.log(data.Username)
-      cy.log(data.Password)
-      cy.log(data.Email)
-    });
+
+ 
+  it("handles alert and confirm box", () => {
+    cy.visit("https://testautomationpractice.blogspot.com/");
+    cy.get("#singleFileInput").attachFile({filePath:'test.csv',fileName:'rohitmadan'})
+    cy.get("div[id='HTML1'] h2[class='title']").screenshot("particular element");
   });
+
+ 
+
 });
