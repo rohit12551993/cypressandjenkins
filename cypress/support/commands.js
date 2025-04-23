@@ -26,5 +26,19 @@
 
 /// <reference types="Cypress" />
 /// <reference types="Cypress-xpath" />
+
+
 require('cypress-downloadfile/lib/downloadFileCommand')
+import 'cypress-file-upload';
+
+Cypress.Commands.add('clicktype',()=>{
+  cy.visit("https://testautomationpractice.blogspot.com/");
+  cy.get("#name").click().type("rohit madan");
+  cy.get("#email").click().type("rohitmadan1993@gmail.com");
+  cy.get("#phone").click().type("9999999999");
+})
+
+
+
+
 
