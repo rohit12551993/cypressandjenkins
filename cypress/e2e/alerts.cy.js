@@ -31,7 +31,7 @@ cy.window().then((win)=>{
     cy.stub(win,'prompt').returns('Wlcome')
 })
     cy.get("button[onclick='jsPrompt()']").click();
-    cy.on('window:confirm',()=> false);
+    cy.get('window:confirm',()=> false);
 
     
 });
