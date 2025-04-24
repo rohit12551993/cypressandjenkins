@@ -1,5 +1,5 @@
 describe("look",()=>{
     it("looks good",()=>{
-        cy.visit("www.facebook.com")
+        cy.visit("www.yahoo.com")
     })
 })
