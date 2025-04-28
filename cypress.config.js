@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
 
 module.exports = defineConfig({
-  projectId: 'd9yqa2',
+  projectId: 'cz8zh8',
   reporter: "cypress-mochawesome-reporter", // For generating HTML reports
 
   e2e: {
