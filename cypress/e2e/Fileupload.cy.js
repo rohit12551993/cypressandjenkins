@@ -13,7 +13,7 @@ describe('fileupload', () => {
 
     it('Renaming a file while uploading ', () => {
         cy.visit("https://the-internet.herokuapp.com/upload");
-        cy.get("#file-upload").attachFile({filePath:'test.csv' , fileName:'rohit.csv'});
+        cy.get("#file-upload").attachFile({filePath:'test.csv' , fileName:'gaurav.csv'});
         cy.get("#file-submit").click();
         cy.wait(3000);
         cy.get("div[class='example'] h3").should('be.visible');
@@ -22,7 +22,7 @@ describe('fileupload', () => {
         });
         it('uplodaing a file by drag and drop ', () => {
             cy.visit("https://the-internet.herokuapp.com/upload");
-            cy.get("#drag-drop-upload").attachFile("test.csv",{subjectType:"drag-n-drop"});
+            cy.get("#drag-drop-upload").attachFile("testing.csv",{subjectType:"drag-n-drop"});
 
         
             });

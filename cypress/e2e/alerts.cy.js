@@ -30,7 +30,7 @@ describe('Alerts', () => {
 cy.window().then((win)=>{
     cy.stub(win,'prompt').returns('Wlcome')
 })
-    cy.get("button[onclick='jsPrompt()']").click();
+    cy.on("button[onclick='jsPrompt()']").click();
     cy.on('window:confirm',()=> false);
 
     
