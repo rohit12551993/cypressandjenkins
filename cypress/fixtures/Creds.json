@@ -6,5 +6,8 @@
     "Username1": "superadmin@mail.com",
     "Password1": "superadmin@123",
     "staffusername": "ramesh@madan.com",
-    "staffpassword": "Password@123"
+    "staffpassword": "Password@123",
+    "tourist_name": "ROHIT MADAN",
+    "tourist_email": "rohit@gmail.com",
+    "tourist_loction": "Delhi"
 }
