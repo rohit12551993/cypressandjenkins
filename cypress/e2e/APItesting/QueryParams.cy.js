@@ -17,9 +17,9 @@ describe("API Testing",()=>{
         .then((Response)=>{
             expect(Response.status).to.eq(200);
             expect(Response.status).equal(200);
-          //  expect(Response.body.page).to.eq(2);
+          
            // expect(Response.body.data).has.length(3)
-           // expect(Response.body.data[0]).have.property('id',7);
+           //expect(Response.body.data[0]).have.property('id',7);
 
         })
     })
